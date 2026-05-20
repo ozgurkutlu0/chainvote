@@ -52,6 +52,145 @@ button {
   font-size: 14px;
 }
 
-button:hover {
+button:hover:not(:disabled) {
   background: #232a3c;
+}
+
+button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.card {
+  border: 1px solid #232734;
+  border-radius: 12px;
+  padding: 20px;
+  margin-bottom: 20px;
+  background: #141823;
+}
+
+.card-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 4px;
+}
+
+.card-header h2 {
+  margin: 0;
+  font-size: 18px;
+}
+
+.badge {
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  padding: 4px 8px;
+  border-radius: 999px;
+  font-weight: 600;
+}
+
+.badge-open {
+  background: rgba(102, 225, 165, 0.15);
+  color: #66e1a5;
+}
+
+.badge-closed {
+  background: rgba(225, 102, 102, 0.15);
+  color: #e16666;
+}
+
+.badge-upcoming {
+  background: rgba(225, 197, 102, 0.15);
+  color: #e1c566;
+}
+
+.meta {
+  margin: 0 0 16px 0;
+  color: #9aa3b2;
+  font-size: 13px;
+}
+
+.vote-form .candidates {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 12px 0;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.vote-form label {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+}
+
+.voted {
+  margin: 8px 0 16px 0;
+  color: #66e1a5;
+  font-size: 13px;
+}
+
+.results h3 {
+  margin: 20px 0 12px 0;
+  font-size: 14px;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: #9aa3b2;
+}
+
+.result-row {
+  margin-bottom: 10px;
+}
+
+.result-label {
+  display: flex;
+  justify-content: space-between;
+  font-size: 14px;
+  margin-bottom: 4px;
+}
+
+.result-count {
+  color: #9aa3b2;
+  font-variant-numeric: tabular-nums;
+}
+
+.result-bar {
+  height: 6px;
+  background: #1c2030;
+  border-radius: 3px;
+  overflow: hidden;
+}
+
+.result-bar-fill {
+  height: 100%;
+  background: linear-gradient(90deg, #66e1a5, #4dd3a1);
+  transition: width 200ms ease;
+}
+
+.error {
+  color: #e16666;
+  font-size: 13px;
+}
+
+.warning {
+  background: rgba(225, 197, 102, 0.1);
+  border: 1px solid rgba(225, 197, 102, 0.3);
+  color: #e1c566;
+  padding: 12px 14px;
+  border-radius: 8px;
+  font-size: 13px;
+}
+
+.warning code {
+  background: rgba(0, 0, 0, 0.3);
+  padding: 1px 4px;
+  border-radius: 3px;
+}
+
+.muted {
+  color: #9aa3b2;
+  font-size: 13px;
 }

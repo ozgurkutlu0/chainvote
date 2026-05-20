@@ -1,9 +1,11 @@
 import { useEffect, useState } from "react";
 import VoteForm from "./VoteForm.jsx";
+import Results from "./Results.jsx";
 
-export default function ElectionCard({ electionId, contract, account, onVoted }) {
+export default function ElectionCard({ electionId, contract, account }) {
   const [meta, setMeta] = useState(null);
   const [voted, setVoted] = useState(false);
+  const [refreshKey, setRefreshKey] = useState(0);
 
   useEffect(() => {
     let cancelled = false;
@@ -49,11 +51,12 @@ export default function ElectionCard({ electionId, contract, account, onVoted })
           contract={contract}
           onVoted={() => {
             setVoted(true);
-            onVoted?.();
+            setRefreshKey((k) => k + 1);
           }}
         />
       )}
       {voted && <p className="voted">You have voted in this election.</p>}
+      <Results electionId={electionId} contract={contract} refreshKey={refreshKey} />
     </div>
   );
 }
